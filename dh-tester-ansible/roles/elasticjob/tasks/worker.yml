@@ -1,0 +1,35 @@
+- hosts: job-workers
+  vars:
+    worker_home: /data/elasticjob_worker
+    elasticjob_worker: IgniteSync-0.1-SNAPSHOT.jar
+
+  tasks:
+    - name: create worker_home
+      shell: mkdir -p {{worker_home}}
+      ignore_errors: true
+      tags:
+        - install_worker
+
+    - name: copy works to worker_home
+      copy:
+        src: ../files/{{elasticjob_worker}}
+        dest: "{{worker_home}}"
+      tags:
+        - install_worker
+
+    - name: stop worker
+      shell: ps aux | grep " {{elasticjob_worker}}" | grep -v 'grep' | awk '{print $2 }' | xargs kill -9
+      ignore_errors: true
+      args:
+        chdir: "{{worker_home}}"
+      tags:
+        - stop_worker
+        - restart_worker
+
+    - name: start worker
+      shell: nohup java -jar {{elasticjob_worker}} > ignite_sync.log 2>&1 &
+      args:
+        chdir: "{{worker_home}}"
+      tags:
+        - start_worker
+        - restart_worker

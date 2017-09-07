@@ -1,0 +1,9 @@
+
+- include: job.yml
+  # tags:
+  # - install_job
+
+- include: worker.yml
+  # tags:
+  # - install_worker
+  # - start_worker

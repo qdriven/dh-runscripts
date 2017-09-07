@@ -1,0 +1,33 @@
+- hosts: job-servers
+  vars:
+    job_home: /data/elasticjob
+    elasticjob: elastic-job-lite-console-2.1.5
+  
+  tasks:
+    - name: create job_home
+      shell: mkdir -p {{job_home}}
+      ignore_errors: true
+      tags:
+        - install_console
+        
+    - name: copy elasticjob to job_home
+      unarchive:
+        src: ../files/{{elasticjob}}.tar.gz
+        dest: "{{job_home}}"
+      tags:
+        - install_console
+    
+    - name: stop elasticjob console
+      shell: nohup sh bin/start.sh > elasticjob.log 2>&1 &
+      args:
+        chir: "{{job_home}}/{{elasticjob}}" 
+      tags:
+        - stop_console
+        - start_console
+
+    - name: start elasticjob console
+      shell: nohup sh bin/start.sh > elasticjob.log 2>&1 &
+      args:
+        chir: "{{job_home}}/{{elasticjob}}" 
+      tags:
+        - start_console

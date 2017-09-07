@@ -1,0 +1,9 @@
+*.retry
+IgniteSync-0.1-SNAPSHOT.jar
+.vscode/
+all-in-one
+dh-ansible-scripts/
+dh-ci/
+dh-cmdb/
+ansible-backup/
+scripts/
