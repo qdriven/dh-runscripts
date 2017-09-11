@@ -9,27 +9,31 @@
       ignore_errors: true
       tags:
         - install_worker
+        - reload
 
-    - name: copy works to worker_home
+    - name: copy workers to worker_home
       copy:
         src: ../files/{{elasticjob_worker}}
         dest: "{{worker_home}}"
       tags:
         - install_worker
+        - reload
 
     - name: stop worker
-      shell: ps aux | grep " {{elasticjob_worker}}" | grep -v 'grep' | awk '{print $2 }' | xargs kill -9
+      shell: ps aux | grep "{{elasticjob_worker}}" | grep -v 'grep' | awk '{print $2 }' | xargs kill -9
       ignore_errors: true
       args:
         chdir: "{{worker_home}}"
       tags:
         - stop_worker
         - restart_worker
+        - reload
 
     - name: start worker
-      shell: nohup java -jar {{elasticjob_worker}} > ignite_sync.log 2>&1 &
+      shell: setsid nohup java -jar {{elasticjob_worker}} > ignite_sync.log 2>&1 &
       args:
         chdir: "{{worker_home}}"
       tags:
         - start_worker
         - restart_worker
+        - reload
