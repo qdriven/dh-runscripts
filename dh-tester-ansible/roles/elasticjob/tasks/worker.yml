@@ -28,7 +28,15 @@
         - stop_worker
         - restart_worker
         - reload
-
+    - name: clean logs 
+      shell: rm -rf ignite_sync.log
+      args:
+        chdir: "{{worker_home}}"
+      tags:
+        - start_worker
+        - restart_worker
+        # - reload
+        
     - name: start worker
       shell: setsid nohup java -jar {{elasticjob_worker}} > ignite_sync.log 2>&1 &
       args:
