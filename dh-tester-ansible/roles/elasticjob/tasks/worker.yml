@@ -9,7 +9,7 @@
       ignore_errors: true
       tags:
         - install_worker
-        - reload
+        - reload_worker
 
     - name: copy workers to worker_home
       copy:
@@ -17,7 +17,7 @@
         dest: "{{worker_home}}"
       tags:
         - install_worker
-        - reload
+        - reload_worker
 
     - name: stop worker
       shell: ps aux | grep "{{elasticjob_worker}}" | grep -v 'grep' | awk '{print $2 }' | xargs kill -9
@@ -35,7 +35,7 @@
       tags:
         - start_worker
         - restart_worker
-        # - reload
+        - reload_worker
         
     - name: start worker
       shell: setsid nohup java -jar {{elasticjob_worker}} > ignite_sync.log 2>&1 &
@@ -44,4 +44,11 @@
       tags:
         - start_worker
         - restart_worker
-        - reload
+        - reload_worker
+    
+    - name: tail logs
+      shell: tail -f ignite_sync.log
+      args:
+        chdir: "{{worker_home}}"
+      tags:
+        - worker_logs
