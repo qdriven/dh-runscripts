@@ -27,7 +27,7 @@
       tags:
         - stop_worker
         - restart_worker
-        - reload
+        - reload_worker
     - name: clean logs 
       shell: rm -rf ignite_sync.log
       args:
@@ -45,10 +45,3 @@
         - start_worker
         - restart_worker
         - reload_worker
-    
-    - name: tail logs
-      shell: tail -f ignite_sync.log
-      args:
-        chdir: "{{worker_home}}"
-      tags:
-        - worker_logs
