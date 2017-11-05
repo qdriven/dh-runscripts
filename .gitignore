@@ -1,3 +1,7 @@
+*.gz
+*.tar.gz
+*.tar
+rsa
 *.retry
 IgniteSync-0.1-SNAPSHOT.jar
 .vscode/
@@ -7,3 +11,4 @@ dh-ci/
 dh-cmdb/
 ansible-backup/
 scripts/
+hadoop-3.0.0-beta1/

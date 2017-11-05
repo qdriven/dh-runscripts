@@ -1,0 +1,49 @@
+- hosts: skywalking-server
+  vars:
+    home: /data/skywalking
+    file_name: skywalking-web
+  
+  tasks:
+    - name: create skwalking server home
+      shell: mkdir -p {{home}}/skywalking-web
+      ignore_errors: true
+      tags:
+        - install_web
+        
+    - name: copy skywalking web files to clients
+      unarchive:
+        src: ../files/{{file_name}}.tar.gz
+        dest: "{{home}}"
+      tags:
+        - install_web
+
+    - name: copy collector config file
+      template:
+        src: ../templates/{{item}}
+        dest: "{{ home }}/skywalking-web/config"
+      ignore_errors: true
+      with_items:
+        - collector_config.properties
+        - application.properties
+      tags:
+        - install_web
+        - web_config
+
+    - name: stop  web server
+      shell:  ps aux | grep "skywalking-web"| grep -v 'grep' | awk '{print $2 }' | xargs kill -9
+      tags:
+        - stop_web
+
+    - name: start up web server
+      shell: sh bin/startup.sh
+      args:
+        chdir: "{{home}}/skywalking-web"
+      tags:
+        - start_web
+
+
+    - name: cleanup server insallation files
+      shell: mv {{home}}/skywalking-web {{home}}/skywalking-web_bnk
+      tags:
+        - uninstall_web
+      ignore_errors: true

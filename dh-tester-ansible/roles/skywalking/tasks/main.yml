@@ -1,0 +1,3 @@
+ - include: agent.yml
+ - include: server.yml
+ - include: collector.yml

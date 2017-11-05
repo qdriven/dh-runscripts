@@ -1,0 +1,38 @@
+- hosts: skywalking-agent
+  vars:
+    home: /data/skywalking
+    file_name: skywalking-agent
+  
+  tasks:
+    - name: create skwalking_home
+      shell: mkdir -p {{home}}/skywalking-agent
+      ignore_errors: true
+      tags:
+        - install_agent
+        
+    - name: copy agent files to clients
+      unarchive:
+        src: ../files/{{file_name}}.tar.gz
+        dest: "{{home}}/skywalking-agent"
+      tags:
+        - install_agent
+
+    - name: copy config file
+      template:
+        src: ../templates/agent.config
+        dest: "{{ home }}/skywalking-agent/config"
+      ignore_errors: true
+      tags:
+        - install_agent
+    
+    - name: cleanup agent insallation files
+      shell: mv {{home}} {{home}}_bnk
+      tags:
+        - uninstall_agent
+      ignore_errors: true
+    
+    - name: cleanup data
+      shell: mv {{home}}/data {{home}}/data_bnk
+      tags:
+        - cleanup
+      ignore_errors: true

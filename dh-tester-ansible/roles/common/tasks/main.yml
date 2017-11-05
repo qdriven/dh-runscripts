@@ -1,0 +1,13 @@
+- hosts: hadoop-datanodes
+  
+  # tasks:
+  #   - name: genenrate rsa
+  #     shell: ssh-keygen -t rsa
+  #     when: master is defined
+    
+    - name: ssh-copy-id
+      shell: ssh-copy-id -i ~/.ssh/id_rsa.pub
+      when: slave is defined
+    
+    - name: chmod 600 for rsa
+      shell: chmod 0600 ~/.ssh/authorized_keys 
