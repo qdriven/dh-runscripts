@@ -8,3 +8,4 @@ mkdir -p roles/$1/files
 mkdir -p roles/$1/templates
 mkdir -p roles/$1/meta
 mkdir -p roles/$1/defaults
+touch roles/$1/defaults/main.yml

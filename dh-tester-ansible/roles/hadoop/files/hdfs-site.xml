@@ -30,12 +30,4 @@ dfs.namenode.handler.count	100	More NameNode server threads to handle RPCs from 
              <name>dfs.replication</name>
              <value>1</value>
         </property>
-        <property>
-             <name>dfs.namenode.name.dir</name>
-             <value>file:/Users/patrick/workspace/tools/hadoop-2.8.1/tmp/dfs/name</value>
-        </property>
-        <property>
-             <name>dfs.datanode.data.dir</name>
-             <value>file:/Users/patrick/workspace/tools/hadoop-2.8.1/tmp/dfs/data</value>
-        </property>
 </configuration>

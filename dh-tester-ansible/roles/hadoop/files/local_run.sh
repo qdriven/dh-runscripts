@@ -1,15 +1,7 @@
-# Install Hadoop
+# /bin/sh
 
-- Local(standalone) Mode
-- Pseudo-Distributed Mode
-- Full-Distributed Mode
-
-# Local Mode
-
-```sh
 mkdir input
 cp etc/hadoop/*.xml input
 hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-3.0.0-beta1.jar \
      grep input output 'dfs[a-z.]+'
 cat output/*
-```

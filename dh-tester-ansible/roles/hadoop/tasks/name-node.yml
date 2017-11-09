@@ -1,0 +1,11 @@
+ - host: hadoop-nn
+   vars:
+    hadoop_home: <hadoop_home>
+    hadoop_conf_location: <configuration_location>
+   tasks:
+    -  name: set hadoop core-site
+       copy: 
+        src: ../files/core-site.xml
+        dest: {{hadoop_conf_location}}
+    
+    - name: set 

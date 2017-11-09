@@ -1,0 +1,25 @@
+- hosts: prometheus-server
+  vars:
+    prometheus_root_dir: /data/prometheus
+    workspace: /data/prometheus/prometheus-2.0.0-rc.3.linux-amd64
+  tasks:
+    - name: create prometheus directory structure
+      file: >
+        state=directory
+        path={{ item }}
+        owner=root
+        group=root
+      with_items:
+        - "{{ prometheus_root_dir }}"
+        # - "{{ prometheus_bin_dir }}"
+        # - "{{ prometheus_dist_dir }}"
+        # - "{{ prometheus_config_dir }}"
+        # - "{{ prometheus_db_dir }}"
+      tags:
+        - install      
+    - name: copy prometheus to workspace
+      unarchive:
+        src: ../files/prometheus-2.0.0-rc.3.linux-amd64.tar.gz
+        dest: "{{ prometheus_root_dir }}"
+      tags:
+        - install

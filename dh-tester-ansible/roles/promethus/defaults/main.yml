@@ -1,0 +1,13 @@
+---
+# default file for ansible-prometheus
+prometheus_root_dir: /data/prometheus
+prometheus_config_dir: /data/prometheus/config
+prometheus_server_dir: "{{ prometheus_root_dir }}/prometheus-server"
+prometheus_bin_dir: "{{ prometheus_root_dir }}/bin"
+prometheus_dist_dir: "{{ prometheus_root_dir }}/dist"
+prometheus_db_dir: "{{ prometheus_root_dir }}/databases"
+prometheus_install_file: 
+# prometheus_host_domain_name: example.com
+# node_exporter_version: 0.12.0rc1
+prometheus_version: 2.0.0
+

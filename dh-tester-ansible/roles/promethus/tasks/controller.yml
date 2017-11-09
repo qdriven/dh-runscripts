@@ -1,0 +1,21 @@
+- hosts: prometheus-server
+  vars:
+    prometheus_root_dir: /data/prometheus
+    workspace: /data/prometheus/prometheus-2.0.0-rc.3.linux-amd64
+  tasks:
+
+    - name: stop promethus
+      shell: ps aux | grep prometheus | grep -v 'grep' | awk '{ print $2}' | xargs kill -9
+      tags:
+        - stop
+        - restart
+
+    - name: start promethus
+      shell: setsid nohup ./prometheus --config.file=prometheus.yml &
+      args:
+        chdir: "{{workspace}}"
+      tags:
+        - start
+        - restart
+
+
