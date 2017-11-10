@@ -1,6 +1,7 @@
 *.gz
 *.tar.gz
 *.tar
+*.zip
 rsa
 *.retry
 prometheus-2.0.0-rc.3.linux-amd64/
@@ -13,3 +14,4 @@ dh-cmdb/
 ansible-backup/
 scripts/
 hadoop-3.0.0-beta1/
+apache-jmeter-*/
