@@ -3,6 +3,7 @@
 *.tar
 rsa
 *.retry
+prometheus-2.0.0-rc.3.linux-amd64/
 IgniteSync-0.1-SNAPSHOT.jar
 .vscode/
 all-in-one
