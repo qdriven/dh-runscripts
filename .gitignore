@@ -1,3 +1,5 @@
+gatling-charts-highcharts-bundle-2.3.0/
+skywalking/
 *.gz
 *.tar.gz
 *.tar
@@ -15,3 +17,9 @@ ansible-backup/
 scripts/
 hadoop-3.0.0-beta1/
 apache-jmeter-*/
+wso2sp-4.0.0-Alpha2/
+spark-2.2.0-bin-hadoop2.7/
+apache-ignite-fabric-2.3.0-bin/
+gatling-bundle/
+
+
