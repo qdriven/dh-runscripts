@@ -22,4 +22,6 @@ spark-2.2.0-bin-hadoop2.7/
 apache-ignite-fabric-2.3.0-bin/
 gatling-bundle/
 hbase-1.2.6/
+kafka_2.12-1.0.0/
+apache-hive-2.1.1-bin/
 
