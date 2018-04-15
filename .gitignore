@@ -1,4 +1,6 @@
 zookeeper-3.4.11/
+apache-cassandra-*/
+flink-*/
 gatling-charts-highcharts-bundle-2.3.0/
 skywalking/
 *.gz
