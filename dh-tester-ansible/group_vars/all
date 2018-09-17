@@ -1,0 +1,230 @@
+## 全局参数设置
+
+# Linux系统参数limits.conf 
+system:
+  limits_conf:
+        limits_nofile_hard: 131072
+        limits_nofile_soft: 131072
+
+# 本地打包待安装的软件目录
+local_src_root_dir: /opt/pkg/
+
+# 安装到远程节点下的顶级目录
+install_root_dir: /opt/csh
+# 包解压后安装目录
+install_pkg_dir: "{{install_root_dir}}/core"
+# 日志目录
+log_dir: "{{install_root_dir}}/logs"
+# 元数据目录
+metadata_dir: "{{install_root_dir}}/data"
+# 公用配置目录
+config_dir: "{{install_root_dir}}/conf"
+# 临时目录
+tmp_dir: "{{install_root_dir}}/tmp"
+
+root_dir_owner: hadoop
+root_dir_group: hadoop
+
+# jdk parameters
+jdk:
+  src_pkg_name: jdk1.7.0_55.tar.gz
+  install_dir: "{{install_pkg_dir}}/jdk1.7.0_55"
+  owner: hadoop
+  group: hadoop
+
+# scala parameters
+scala:
+  src_pkg_name: scala.tar.gz
+  owner: hadoop
+  group: hadoop
+
+# azkaban parameters
+azkaban:
+  src_pkg_name: azkaban.tar.gz
+  owner: hadoop
+  group: hadoop
+  
+# hadoop parameters
+# 所有zookeeper地址通过读取hosts中的[zookeepers]主机组得出
+hadoop:
+  src_pkg_name: hadoop.tar.gz
+  install_dir: "{{install_pkg_dir}}/hadoop"
+  core_site:
+        fs_defaultFS: hdfs://csh
+        hadoop_tmp_dir: "{{metadata_dir}}/namenode"
+  hadoop_env:
+        hadoop_log_dir: "{{log_dir}}/hadoop"
+  hdfs_site:
+        dfs_nameservices: csh
+        dfs_journalnode_edits_dir: "{{metadata_dir}}/journal"
+        dfs_ha_fencing_ssh_private_key_files: /home/hadoop/.ssh/id_rsa
+        dfs_data_dir: /data/datanode
+        dfs_hosts_exclude: /opt/csh/core/hadoop/etc/hadoop/slaves-excluded
+  mapred_site:
+        yarn_app_mapreduce_am_staging_dir: "{{metadata_dir}}/yarn/staging"
+  tez_site:
+        tez_lib_uris: hdfs://csh/apps/tez,hdfs://csh/apps/tez/lib
+  yarn_env:
+        yarn_log_dir: "{{log_dir}}/yarn"
+  yarn_site:
+        yarn_nodemanager_local_dirs: "{{metadata_dir}}/yarn/local"
+        yarn_nodemanager_log_dirs: "{{log_dir}}/yarn/userlogs"
+        yarn_nodemanager_remote_app_log_dir: hdfs://csh/var/log/hadoop-yarn/apps
+        yarn_resourcemanager_cluster_id: csh
+        yarn_nodemanager_resource_memory_mb: 30000
+        yarn_scheduler_minimum_allocation_mb: 3072
+        yarn_nodemanager_resource_cpu_vcores: 7
+
+        yarn_timeline_service_address: m002:10200
+        yarn_timeline_service_webapp_address: m002:8188
+        yarn_timeline_service_webapp_https_address: m002:8190
+
+  owner: hadoop
+  group: hadoop
+
+# elasticsearch parameters
+elasticsearch:
+  src_pkg_name: elasticsearch-2.1.1.tar.gz
+  install_dir: "{{install_pkg_dir}}/elasticsearch-2.1.1"
+  es_heap_size: 4g
+  cluster_name: colasoft_elasticsearch
+  index_number_of_shards: 5
+  index_number_of_replicas: 0
+  action_auto_create_index: true 
+  path_data: /data/elasticsearch/data
+  path_logs: "{{log_dir}}/elasticsearch"
+  bootstrap_mlockall: false
+  owner: hadoop
+  group: hadoop
+
+# flume parameters
+flume:
+  src_pkg_name: flume.tar.gz
+  install_dir: "{{install_pkg_dir}}/flume"
+  sink:
+        hdfs_path: hdfs://csh/csh/data
+  log_dir: "{{log_dir}}/flume"
+  java_opts: "-Xms100m -Xmx1000m -Dflume.root.logger=INFO,LOGFILE -Dflume.log.dir={{log_dir}}/flume"
+  owner: hadoop
+  group: hadoop
+
+# hbase parameters
+hbase:
+  src_pkg_name: hbase.tar.gz
+  install_dir: "{{install_pkg_dir}}/hbase"
+  hbase_env:
+        hbase_heapsize: 2048
+        hbase_opts: >
+                    "-server -Xss2640K -Xms12288m -Xmx16384m 
+                    -XX:MaxPermSize=2640m -XX:SurvivorRatio=16  
+                    -XX:NewSize=5120m  -XX:MaxNewSize=5120m 
+                    -XX:+DisableExplicitGC -XX:GCTimeRatio=2 
+                    -XX:ParallelGCThreads=24 -XX:+UseParNewGC 
+                    -XX:MaxGCPauseMillis=5000 -XX:+UseConcMarkSweepGC  
+                    -XX:CMSInitiatingOccupancyFraction=70 
+                    -XX:+CMSClassUnloadingEnabled"
+        hbase_log_dir: "{{log_dir}}/hbase"
+  hbase_site:
+        hbase_rootdir: hdfs://csh/hbase
+        hbase_regionserver_handler_count: 40
+        dfs_replication: 3
+        hbase_hregion_max_filesize: 2147483648
+        hbase_regionserver_lease_period: 240000
+        hbase_rpc_timeout: 300000
+        dfs_socket_timeout: 180000
+  owner: hadoop
+  group: hadoop
+
+# hive parameters
+hive:
+  src_pkg_name: hive.tar.gz
+  install_dir: "{{install_pkg_dir}}/hive"
+  jdbc_connection_url: jdbc:mysql://c001:3306/hive
+  jdbc_connection_driver_name: com.mysql.jdbc.Driver
+  jdbc_connection_user_name: hive
+  jdbc_connection_password: 123456
+  owner: hadoop
+  group: hadoop
+  
+# kafka parameters
+kafka:
+  src_pkg_name: kafka.tar.gz
+  owner: hadoop
+  group: hadoop  
+  
+# kibana parameters
+kibana:
+  src_pkg_name: kibana-4.3.2-linux-x64.tar.gz
+  owner: hadoop
+  group: hadoop
+  
+# mahout parameters
+mahout:
+  src_pkg_name: mahout.tar.gz
+  owner: hadoop
+  group: hadoop  
+  
+# spark parameters
+spark:
+  src_pkg_name: spark.tar.gz
+  install_dir: "{{install_pkg_dir}}/spark"
+  spark_defaults:
+        spark_eventlog_dir: hdfs://csh/SparkeventLog
+        spark_yarn_historyserver_address: m002:18088
+        spark_history_ui_port: 18088
+        spark_driver_memory: 2g
+        spark_executor_memory: 2g
+        spark_local_dir: /data/disk1/tmp/spark/local
+        spark_default_parallelism: 8
+        spark_dynamicallocation_minexecutors: 1
+        spark_dynamicallocation_maxexecutors: 5000
+  spark_env:
+        hadoop_conf_dir: "{{hadoop.install_dir}}/etc/hadoop"
+        spark_executor_cores: 1
+        spark_executor_memory: 2G
+        spark_driver_memory: 2G
+        spark_worker_dir: "{{metadata_dir}}/spark/work"
+        spark_log_dir: "{{log_dir}}/spark"
+        spark_pid_dir: "{{tmp_dir}}"
+        spark_classpath: >
+                        $SPARK_CLASSPATH
+                        :/opt/csh/core/spark/lib/mysql-connector-java-5.1.35-bin.jar
+                        :/opt/csh/core/spark/lib/elasticsearch-hadoop-2.1.2.jar
+  owner: hadoop
+  group: hadoop
+  
+# sqoop parameters
+sqoop:
+  src_pkg_name: sqoop.tar.gz
+  install_dir: "{{install_pkg_dir}}/sqoop"
+  owner: hadoop
+  group: hadoop   
+  
+# storm parameters
+storm:
+  src_pkg_name: storm.tar.gz
+  install_dir: "{{install_pkg_dir}}/storm"
+  owner: hadoop
+  group: hadoop   
+    
+# tachyon parameters
+tachyon:
+  src_pkg_name: tachyon.tar.gz
+  install_dir: "{{install_pkg_dir}}/tachyon"
+  owner: hadoop
+  group: hadoop
+
+# tez parameters
+tez:
+  src_pkg_name: tez.tar.gz
+  owner: hadoop
+  group: hadoop
+  
+# zookeeper parameters
+zookeeper:
+  src_pkg_name: zookeeper.tar.gz
+  install_dir: "{{install_pkg_dir}}/zookeeper"
+  data_dir: /opt/csh/core/zookeeper/data
+  zoo_log_dir: "{{log_dir}}/zookeeper"
+  owner: hadoop
+  group: hadoop

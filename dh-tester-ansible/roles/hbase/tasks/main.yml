@@ -1,0 +1,50 @@
+- hosts: hbase-servers
+  vars:
+    home: ../files/hbase-2.1.0
+    file_name: hadoop-2.9.0
+    process_name: hadoop
+
+  tasks:
+    - name: create hadoop home
+      shell: mkdir -p {{home}}/hadoop
+      ignore_errors: true
+      tags:
+        - install_hadoop
+
+    - name: copy hadoop files to clients
+      unarchive:
+        src: ../files/{{file_name}}.tar.gz
+        dest: "{{home}}"
+      tags:
+        - install_hadoop
+
+    # - name: copy collector config file
+    #   template:
+    #     src: ../templates/{{item}}
+    #     dest: "{{ home }}/hadoop/config"
+    #   ignore_errors: true
+    #   with_items:
+    #     - *.properties
+    #   tags:
+    #     # - install_hadoop
+    #     - hadoop_config
+
+    - name: stop  hadoop
+      shell:  ps aux | grep "{{process_name}}"| grep -v 'grep' | awk '{print $2 }' | xargs kill -9
+      tags:
+        - stop_hadoop
+        - restart_hadoop
+
+    - name: start up hadoop
+      shell: sh bin/startup.sh
+      args:
+        chdir: "{{home}}/hadoop"
+      tags:
+        - start_hadoop
+
+
+    - name: cleanup server insallation files
+      shell: mv {{home}}/hadoop {{home}}/hadoop_bnk
+      tags:
+        - uninstall_hadoop
+      ignore_errors: true

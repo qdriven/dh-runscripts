@@ -1,3 +1,4 @@
+hbase-*/
 zookeeper-3.4.11/
 apache-cassandra-*/
 flink-*/
