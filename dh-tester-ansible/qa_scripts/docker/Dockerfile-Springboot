@@ -1,0 +1,7 @@
+FROM java:10
+WORKDIR /var/app
+
+ADD *.jar /var/app/web.jar
+ADD application.properties /var/app/application.properties
+ENTRYPOINT [ "java", "-jar","/var/app/web.jar"]
+EXPOSE 9090
