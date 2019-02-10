@@ -1,0 +1,31 @@
+- hosts: btp-servers
+  vars:
+    home: /usr/local
+    jdk_file: jdk-8u152-linux-x64
+    tomcat_file: tomcat_file
+    
+  tasks:
+    - name: ping host
+      shell: echo "helo world"
+      tags:
+        - ping_host
+        
+    # - name: 复制JDK文件
+    #   unarchive:
+    #     src: ../files/{{jdk_file}}.tar.gz
+    #     dest: "{{home}}"
+    #   tags:
+    #     - install_java
+    
+    # - name: setup JAVA_HOME
+    #   shell: echo "export JAVA_HOME={{home}}/{{jdk_file}}" >> ~/.bashrc && source ~/.bashrc
+    #   tags:
+    #     - config_java
+    #     - install_java
+    
+    # - name: setup tomcat
+    #   unarchive:
+    #     src: ../files/{{tomcat}}.tar.gz
+    #     dest: "{{home}}"
+    #   tags:
+    #     - install_tomcat

@@ -1,2 +1,2 @@
-[test-server]
-ldsl-tidb-d02 ansible_host=10.199.212.81 ansible_ssh_user=root ansible_ssh_pass=123456 leader=yes
+[java-servers]
+ldsl-tidb-d02 ansible_host=10.22.110.27 ansible_ssh_user=root ansible_ssh_pass=root leader=yes

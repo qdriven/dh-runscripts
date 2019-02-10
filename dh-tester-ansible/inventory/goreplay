@@ -1,0 +1,2 @@
+[goreplay-servers]
+test-1 ansible_host=10.8.1.43 ansible_ssh_user=root ansible_ssh_pass=root leader=yes
