@@ -1,0 +1,71 @@
+---
+- name: "Build the environment"
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: Create the SSH keypair
+      local_action:
+        module: rax_keypair
+        credentials: "{{ credentials_file }}"
+        name: "{{ cloud.ssh.keyname }}"
+        public_key: "{{ lookup('file', cloud.ssh.keyfile) }}"
+        region: "{{ cloud.region }}"
+
+    - name: "Create kafka nodes"
+      local_action:
+        module: rax
+        credentials: "{{ credentials_file }}"
+        name: "kafka-%02d.{{ cloud.domain }}"
+        image: "{{ cloud.image }}"
+        flavor: "{{ cloud.flavor }}"
+        count: "{{ cloud.nodes_count }}"
+        region: "{{ cloud.region }}"
+        key_name: "{{ cloud.ssh.keyname }}"
+        exact_count: yes
+        auto_increment: true
+        group: kafka-nodes
+        state: present
+        wait: true
+        wait_timeout: 900
+      register: rax_kafka
+      when: cloud.nodes_count > 0
+
+    - name: "Create CBS Volumes for kafka nodes"
+      local_action:
+        module: rax_cbs
+        credentials: "{{ credentials_file }}"
+        name: "{{ item[0].name }}_{{ item[1] }}"
+        volume_type: "{{ cloud.cbs.disks_type }}"
+        size: "{{ cloud.cbs.disks_size }}"
+        region: "{{ cloud.region }}"
+        state: present
+        wait: true
+      with_nested:
+        - "{{ rax_kafka.instances }}"
+        - "{{ data_disks_devices }}"
+      when: cloud.nodes_count > 0 and cloud.cbs.build_cbs
+
+    - name: "Attach CBS Volumes to kafka nodes"
+      local_action:
+        module: rax_cbs_attachments
+        credentials: "{{ credentials_file }}"
+        volume: "{{ item[0].name }}_{{ item[1] }}"
+        server: "{{ item[0].id }}"
+        region: "{{ cloud.region }}"
+        device: "/dev/{{ item[1] }}"
+        state: present
+        wait: true
+      with_nested:
+        - "{{ rax_kafka.instances }}"
+        - "{{ data_disks_devices }}"
+      when: cloud.nodes_count > 0 and cloud.cbs.build_cbs
+
+- name: "Show debug info"
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  tasks:
+    - name: "Show rax_kafka info"
+      debug: var=rax_kafka
+      when: debug
