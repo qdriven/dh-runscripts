@@ -1,1 +1,6 @@
 data/
+*.pyc
+/media
+/python
+/roles/dotfiles/files/*
+/roles/ssh/files/ssh_config
