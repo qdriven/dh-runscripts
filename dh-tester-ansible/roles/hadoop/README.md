@@ -181,3 +181,10 @@ sbin/start-all.sh
 ```
 
 ## setup javahome to hadoop-env.sh
+
+
+
+## web namenode move to 
+from hadoop 3.0
+http://localhost:9870
+
