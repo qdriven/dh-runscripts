@@ -4,3 +4,4 @@ data/
 /python
 /roles/dotfiles/files/*
 /roles/ssh/files/ssh_config
+/roles/hadoop/files/hadoop*/

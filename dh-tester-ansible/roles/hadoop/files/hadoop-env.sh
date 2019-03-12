@@ -411,3 +411,7 @@ export HDFS_NAMENODE_OPTS="${HADOOP_GC_SETTINGS} -Xloggc:${HADOOP_LOG_DIR}/gc-rm
 #
 # For example, to limit who can execute the namenode command,
 # export HDFS_NAMENODE_USER=hdfs
+
+
+## SElf setting
+export HADOOP_HOME=`pwd`/hadoop-3.1.2
