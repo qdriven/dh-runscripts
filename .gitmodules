@@ -1,0 +1,3 @@
+[submodule "Shell-Steps"]
+	path = Shell-Steps
+	url = https://github.com/allroundtesters/Shell-Steps.git
