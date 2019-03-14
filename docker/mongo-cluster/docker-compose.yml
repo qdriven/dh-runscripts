@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  mongo3:
+    image: mongo:latest
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--rest", "--httpinterface" ]
+
+  mongo2:
+    image: mongo:latest
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--rest", "--httpinterface" ]
+
+  mongo1:
+    image: mongo:latest
+    restart: always
+    entrypoint: [ "/usr/bin/mongod", "--replSet", "rs", "--rest", "--httpinterface" ]
+
+  mongosetup:
+    image: mongo:latest
+    volumes:
+      - ./scripts:/scripts
+    restart: always
+    entrypoint: [ "bash", "/scripts/mongosetup.sh" ]
