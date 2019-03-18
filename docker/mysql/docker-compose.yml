@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  db: 
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: "quality"
+      MYSQL_USER: "dq"
+      MYSQL_PASSWORD: "dq123456"
+      MYSQL_ROOT_PASSWORD: "dq123456"
+    ports:
+      - '3306:3306'
+    expose:
+      - "3306"
+    volumes:
+      - type: bind
+        source: ./local-data
+        target: /var/lib/mysql
+    labels:
+      name: "local-mysql"
+      role: "dq-mysql"

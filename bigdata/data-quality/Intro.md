@@ -65,9 +65,12 @@ st->define(right)->define1->define2->ed
 
 ## Data Quality - Accuracy Explanation
 
+ Hive table and Avro file
+
 DLS Translation:
 DSL: 
-```source.id = target.id and source.name = target.name
+```
+source.id = target.id and source.name = target.name
 ```
 =>
 ```
@@ -146,3 +149,12 @@ For timeliness, is to measure the latency of each item, and get the statistics o
    * Database MetaData
    * All Database Name
    * All Tables Metadatas
+
+
+
+## Aliyun References
+
+- 数据校验
+- 质量监控系统
+- 报警系统
+- 监控分析
