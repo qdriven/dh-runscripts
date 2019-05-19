@@ -1,0 +1,3 @@
+---
+  deployuser: "user"
+  userkey: "~/.ssh/id_rsa.pub"

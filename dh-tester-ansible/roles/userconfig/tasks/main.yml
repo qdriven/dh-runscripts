@@ -1,0 +1,35 @@
+- name: Set up authorized keys for the deployer user
+  become: yes
+  become_user: "{{ deployuser }}"
+  authorized_key:
+    user: "{{ deployuser }}"
+    key: "{{ item }}"
+  with_file:
+    - "{{ userkey }}" 
+
+- name: Make sure we have a 'wheel' group
+  become: yes
+  group:
+    name: wheel
+    state: present
+
+- name: Add user to wheel group
+  ignore_errors: True # TODO: remove this
+  become: yes
+  user: name={{ deployuser }} groups=wheel append=yes state=present
+
+
+- name: Ensure wheel group exists
+  become: yes
+  group:
+    name: wheel
+    state: present
+
+- name: Ensure users in wheel group can sudo without password
+  become: yes
+  ignore_errors: True # TODO: remove this
+  template:
+    src: wheel-group.j2
+    dest: /etc/sudoers.d/91-wheel-group
+    mode: 0440
+
