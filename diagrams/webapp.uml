@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>azkaban.webapp</OriginalElement>
+  <nodes>
+    <node x="626.0" y="1510.0">azkaban.webapp.servlet</node>
+    <node x="1138.0" y="958.0">azkaban.webapp.Status</node>
+    <node x="1031.0" y="1278.0">azkaban.webapp.TriggerPluginLoader</node>
+    <node x="0.0" y="1510.0">azkaban.webapp.WebMetricsTest</node>
+    <node x="474.0" y="958.0">azkaban.webapp.AzkabanWebServerModule</node>
+    <node x="329.0" y="1510.0">azkaban.webapp.PluginCheckerAndActionsLoader</node>
+    <node x="0.0" y="1278.0">azkaban.webapp.WebMetrics</node>
+    <node x="0.0" y="958.0">azkaban.webapp.StatusService</node>
+    <node x="715.0" y="1278.0">azkaban.webapp.AzkabanWebServerTest</node>
+    <node x="300.0" y="1278.0">azkaban.webapp.WebServerProvider</node>
+    <node x="0.0" y="0.0">azkaban.webapp.AzkabanWebServer</node>
+    <node x="801.0" y="1510.0">azkaban.webapp.plugin</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.5524560339599758" x="836.0" y="814.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

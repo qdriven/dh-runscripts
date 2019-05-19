@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>azkaban.flow</OriginalElement>
+  <nodes>
+    <node x="1285.0" y="0.0">azkaban.flow.Edge</node>
+    <node x="0.0" y="0.0">azkaban.flow.Flow</node>
+    <node x="309.0" y="1387.0">azkaban.flow.FlowTest</node>
+    <node x="0.0" y="1112.0">azkaban.flow.ConditionOnJobStatus</node>
+    <node x="0.0" y="1387.0">azkaban.flow.SpecialJobTypes</node>
+    <node x="539.0" y="0.0">azkaban.flow.CommonJobProperties</node>
+    <node x="902.0" y="0.0">azkaban.flow.Node</node>
+    <node x="373.0" y="1112.0">azkaban.flow.FlowProps</node>
+    <node x="1178.0" y="1112.0">azkaban.flow.FlowUtilsTest</node>
+    <node x="675.0" y="1112.0">azkaban.flow.FlowUtils</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.4360655737704918" x="794.5" y="752.5" />
+  <SelectedNodes>
+    <node>azkaban.flow.Edge</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

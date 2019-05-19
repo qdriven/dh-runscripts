@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>azkaban</OriginalElement>
+  <nodes>
+    <node x="2222.0" y="2382.0">azkaban.viewer</node>
+    <node x="558.0" y="2462.0">azkaban.webapp</node>
+    <node x="785.0" y="2569.0">azkaban.db</node>
+    <node x="2567.0" y="2382.0">azkaban.restli</node>
+    <node x="0.0" y="1235.0">azkaban.Constants.JobCallbackProperties</node>
+    <node x="0.0" y="2569.0">azkaban.user</node>
+    <node x="1330.0" y="2382.0">azkaban.security</node>
+    <node x="1743.0" y="1224.0">azkaban.Constants.FlowTriggerProps</node>
+    <node x="1513.0" y="2382.0">azkaban.reportal</node>
+    <node x="9.5" y="2207.0">azkaban.trigger</node>
+    <node x="2391.1004901960787" y="2047.0">azkaban.AzkabanCommonModuleConfig</node>
+    <node x="447.9999999999999" y="608.0">azkaban.Constants.ConfigurationKeys</node>
+    <node x="1140.0" y="2382.0">azkaban.database</node>
+    <node x="1344.0" y="1180.0">azkaban.Constants.JobProperties</node>
+    <node x="0.0" y="2382.0">azkaban.ServiceProvider</node>
+    <node x="642.4583333333335" y="2127.0">azkaban.jobExecutor</node>
+    <node x="0.0" y="2307.0">azkaban.scheduler</node>
+    <node x="195.53799019607857" y="2207.0">azkaban.executor</node>
+    <node x="1874.0" y="2382.0">azkaban.fixture</node>
+    <node x="620.1004901960786" y="2307.0">azkaban.flowtrigger</node>
+    <node x="385.2879901960785" y="2207.0">azkaban.dag</node>
+    <node x="227.63235294117658" y="2307.0">azkaban.execapp</node>
+    <node x="563.0" y="2382.0">azkaban.server</node>
+    <node x="979.9999999999999" y="1235.0">azkaban.Constants.FlowProperties</node>
+    <node x="479.0" y="2569.0">azkaban.jmx</node>
+    <node x="740.0" y="2382.0">azkaban.jobcallback</node>
+    <node x="697.2083333333334" y="2207.0">azkaban.jobtype</node>
+    <node x="1695.0" y="2382.0">azkaban.metrics</node>
+    <node x="1892.1004901960787" y="2047.0">azkaban.HadoopModule</node>
+    <node x="2395.0" y="2382.0">azkaban.metric</node>
+    <node x="266.0" y="2382.0">azkaban.AzkabanCoreModule</node>
+    <node x="321.0" y="2569.0">azkaban.test</node>
+    <node x="977.1004901960785" y="2047.0">azkaban.AzkabanCommonModule</node>
+    <node x="250.53799019607857" y="2127.0">azkaban.utils</node>
+    <node x="2048.0" y="2382.0">azkaban.crypto</node>
+    <node x="1488.1004901960785" y="2047.0">azkaban.ServiceProviderTest</node>
+    <node x="952.4999999999999" y="0.0">azkaban.Constants</node>
+    <node x="161.0" y="2569.0">azkaban.flow</node>
+    <node x="796.1004901960786" y="2307.0">azkaban.storage</node>
+    <node x="634.0" y="2569.0">azkaban.sla</node>
+    <node x="95.66299019607857" y="2127.0">azkaban.event</node>
+    <node x="468.10049019607857" y="2307.0">azkaban.project</node>
+    <node x="250.03799019607857" y="2047.0">azkaban.alert</node>
+    <node x="942.0" y="2382.0">azkaban.soloserver</node>
+    <node x="570.2083333333334" y="2207.0">azkaban.spi</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="azkaban.Constants.JobProperties" target="azkaban.Constants">
+      <point x="0.0" y="-125.0" />
+      <point x="1533.5" y="588.0" />
+      <point x="1231.8" y="588.0" />
+      <point x="79.80000000000007" y="279.0" />
+    </edge>
+    <edge source="azkaban.scheduler" target="azkaban.trigger">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="azkaban.execapp" target="azkaban.dag">
+      <point x="35.0" y="-15.0" />
+      <point x="332.6323529411766" y="2267.0" />
+      <point x="441.2879901960785" y="2267.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="azkaban.Constants.FlowTriggerProps" target="azkaban.Constants">
+      <point x="0.0" y="-81.0" />
+      <point x="1874.0" y="578.0" />
+      <point x="1311.6" y="578.0" />
+      <point x="159.60000000000014" y="279.0" />
+    </edge>
+    <edge source="azkaban.execapp" target="azkaban.spi">
+      <point x="58.33333333333337" y="-15.0" />
+      <point x="355.96568627450995" y="2277.0" />
+      <point x="583.5833333333334" y="2277.0" />
+      <point x="-40.125" y="15.0" />
+    </edge>
+    <edge source="azkaban.Constants.ConfigurationKeys" target="azkaban.Constants">
+      <point x="0.0" y="-697.0" />
+      <point x="703.9999999999999" y="588.0" />
+      <point x="1072.1999999999998" y="588.0" />
+      <point x="-79.79999999999995" y="279.0" />
+    </edge>
+    <edge source="azkaban.Constants.JobCallbackProperties" target="azkaban.Constants">
+      <point x="0.0" y="-70.0" />
+      <point x="214.0" y="578.0" />
+      <point x="992.3999999999999" y="578.0" />
+      <point x="-159.60000000000002" y="279.0" />
+    </edge>
+    <edge source="azkaban.utils" target="azkaban.alert">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="azkaban.Constants.FlowProperties" target="azkaban.Constants">
+      <point x="0.0" y="-70.0" />
+      <point x="0.0" y="279.0" />
+    </edge>
+    <edge source="azkaban.executor" target="azkaban.event">
+      <point x="-47.66666666666663" y="-15.0" />
+      <point x="219.37132352941194" y="2187.0" />
+      <point x="203.28799019607857" y="2187.0" />
+      <point x="46.125" y="15.0" />
+    </edge>
+    <edge source="azkaban.flowtrigger" target="azkaban.spi">
+      <point x="0.0" y="-15.0" />
+      <point x="698.1004901960786" y="2287.0" />
+      <point x="637.0833333333334" y="2287.0" />
+      <point x="13.375" y="15.0" />
+    </edge>
+    <edge source="azkaban.execapp" target="azkaban.event">
+      <point x="-58.33333333333326" y="-15.0" />
+      <point x="239.29901960784332" y="2287.0" />
+      <point x="165.33333333333337" y="2287.0" />
+      <point x="165.33333333333337" y="2187.0" />
+      <point x="141.78799019607857" y="2187.0" />
+      <point x="-15.375" y="15.0" />
+    </edge>
+    <edge source="azkaban.jobtype" target="azkaban.jobExecutor">
+      <point x="0.0" y="-15.0" />
+      <point x="40.74999999999994" y="15.0" />
+    </edge>
+    <edge source="azkaban.execapp" target="azkaban.executor">
+      <point x="-11.666666666666629" y="-15.0" />
+      <point x="285.96568627450995" y="2267.0" />
+      <point x="267.03799019607857" y="2267.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="azkaban.storage" target="azkaban.spi">
+      <point x="0.0" y="-15.0" />
+      <point x="864.1004901960786" y="2277.0" />
+      <point x="663.8333333333334" y="2277.0" />
+      <point x="40.125" y="15.0" />
+    </edge>
+    <edge source="azkaban.executor" target="azkaban.utils">
+      <point x="0.0" y="-15.0" />
+      <point x="267.03799019607857" y="2187.0" />
+      <point x="279.28799019607857" y="2187.0" />
+      <point x="-28.75" y="15.0" />
+    </edge>
+    <edge source="azkaban.trigger" target="azkaban.event">
+      <point x="0.0" y="-15.0" />
+      <point x="74.5" y="2187.0" />
+      <point x="111.03799019607857" y="2187.0" />
+      <point x="-46.125" y="15.0" />
+    </edge>
+    <edge source="azkaban.webapp" target="azkaban.server">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="azkaban.execapp" target="azkaban.utils">
+      <point x="11.666666666666629" y="-15.0" />
+      <point x="309.2990196078432" y="2257.0" />
+      <point x="349.03799019607857" y="2257.0" />
+      <point x="349.03799019607857" y="2177.0" />
+      <point x="336.78799019607857" y="2177.0" />
+      <point x="28.75" y="15.0" />
+    </edge>
+    <edge source="azkaban.executor" target="azkaban.jobExecutor">
+      <point x="47.66666666666663" y="-15.0" />
+      <point x="314.7046568627452" y="2187.0" />
+      <point x="683.2083333333335" y="2187.0" />
+      <point x="-40.75" y="15.0" />
+    </edge>
+    <edge source="azkaban.project" target="azkaban.spi">
+      <point x="0.0" y="-15.0" />
+      <point x="534.1004901960786" y="2287.0" />
+      <point x="610.3333333333334" y="2287.0" />
+      <point x="-13.375" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5517985611510791" x="922.0013037809649" y="834.574967405476" />
+  <SelectedNodes>
+    <node>azkaban.viewer</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

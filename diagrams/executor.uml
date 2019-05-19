@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>azkaban.executor</OriginalElement>
+  <nodes>
+    <node x="5737.0" y="5206.0">azkaban.executor.Executor</node>
+    <node x="2569.9999999999995" y="3850.5">azkaban.executor.selector</node>
+    <node x="5046.5" y="5464.0">azkaban.executor.ExecutorManagerException.Reason</node>
+    <node x="3246.5" y="4954.0">azkaban.executor.ExecutionLogsDao.FetchLogsHandler</node>
+    <node x="4133.0" y="5206.0">azkaban.executor.NumExecutionsDao</node>
+    <node x="1783.0" y="5657.0">azkaban.executor.ExecutorEventsDao</node>
+    <node x="2396.0" y="0.0">azkaban.executor.ExecutableNode</node>
+    <node x="4686.5" y="3608.0">azkaban.executor.ExecutionFlowDao</node>
+    <node x="0.0" y="3608.0">azkaban.executor.ExecutionFlowDaoTest</node>
+    <node x="466.0" y="5977.0">azkaban.executor.AssignExecutorDao</node>
+    <node x="3446.0" y="5977.0">azkaban.executor.ExecutorApiClient</node>
+    <node x="1404.0" y="5508.0">azkaban.executor.FetchActiveFlowDao.FetchActiveExecutableFlows</node>
+    <node x="5363.0" y="5206.0">azkaban.executor.ExecutionAttempt</node>
+    <node x="937.0" y="5519.0">azkaban.executor.FetchActiveFlowDao.FetchActiveExecutableFlow</node>
+    <node x="3794.0" y="5977.0">azkaban.executor.mail</node>
+    <node x="1989.0" y="5206.0">azkaban.executor.ExecutableJobInfo</node>
+    <node x="830.5" y="5206.0">azkaban.executor.FetchActiveFlowDao</node>
+    <node x="354.0" y="4674.0">azkaban.executor.ExecutionJobDao</node>
+    <node x="781.75" y="3233.5">azkaban.executor.ExecutorManager.CleanerThread</node>
+    <node x="4160.5" y="5420.0">azkaban.executor.NumExecutionsDao.IntHandler</node>
+    <node x="5044.0" y="5657.0">azkaban.executor.ActiveExecutors</node>
+    <node x="1840.0" y="5827.0">azkaban.executor.ExecutorEventsDao.ExecutorLogsResultHandler</node>
+    <node x="28.75" y="3112.0">azkaban.executor.ExecutorManager.QueueProcessorThread</node>
+    <node x="0.0" y="895.0">azkaban.executor.ExecutorManager</node>
+    <node x="2441.5" y="1403.0">azkaban.executor.ExecutableFlowBase</node>
+    <node x="2210.0" y="4674.0">azkaban.executor.ExecutorDaoTest</node>
+    <node x="792.0" y="5042.0">azkaban.executor.ExecutionJobDao.FetchExecutableJobPropsHandler</node>
+    <node x="2145.9999999999995" y="4228.0">azkaban.executor.SelectorTest.MockFilter</node>
+    <node x="2497.9999999999995" y="4228.0">azkaban.executor.SelectorTest.MockComparator</node>
+    <node x="5383.0" y="4075.0">azkaban.executor.ExecutionFlowDao.SelectFromExecutionFlows</node>
+    <node x="3776.0" y="1146.5">azkaban.executor.JdbcExecutorLoader</node>
+    <node x="915.0" y="5977.0">azkaban.executor.ExecutableFlowPriorityComparatorTest</node>
+    <node x="3566.0" y="3608.0">azkaban.executor.RunningExecutionsUpdaterTest</node>
+    <node x="6211.5" y="3608.0">azkaban.executor.ExecutorDao</node>
+    <node x="2283.0" y="5657.0">azkaban.executor.NumExecutionsDaoTest</node>
+    <node x="2642.0" y="5657.0">azkaban.executor.ExecutionLogsDaoTest</node>
+    <node x="1855.9999999999995" y="3608.0">azkaban.executor.SelectorTest</node>
+    <node x="2414.0" y="5977.0">azkaban.executor.RunningExecutions</node>
+    <node x="5834.0" y="5657.0">azkaban.executor.ExecutorApiGatewayTest</node>
+    <node x="4714.0" y="5657.0">azkaban.executor.ExecutionReference</node>
+    <node x="5630.0" y="962.0">azkaban.executor.ExecutionOptions.FailureAction</node>
+    <node x="4378.0" y="5657.0">azkaban.executor.FetchActiveFlowDaoTest</node>
+    <node x="5822.0" y="3608.0">azkaban.executor.Status</node>
+    <node x="2484.5" y="2278.0">azkaban.executor.ExecutableFlow</node>
+    <node x="4507.0" y="5206.0">azkaban.executor.ExecutorInfo</node>
+    <node x="4925.0" y="5206.0">azkaban.executor.ExecutorManagerException</node>
+    <node x="6276.0" y="5657.0">azkaban.executor.ExecutorApiGatewaySystemTest</node>
+    <node x="2126.0" y="5977.0">azkaban.executor.ExecutorManagerUpdaterStage</node>
+    <node x="2581.0" y="4674.0">azkaban.executor.ExecutorLogEvent</node>
+    <node x="1280.0" y="4674.0">azkaban.executor.InteractiveTestJob</node>
+    <node x="637.0" y="5657.0">azkaban.executor.ExecutorApiGateway</node>
+    <node x="3108.0" y="5977.0">azkaban.executor.ExecutableJobInfoTest</node>
+    <node x="5156.0" y="0.0">azkaban.executor.ConnectorParams</node>
+    <node x="377.0" y="5519.0">azkaban.executor.FetchActiveFlowDao.FetchUnfinishedFlowsMetadata</node>
+    <node x="2990.0" y="5657.0">azkaban.executor.ExecutionFinalizer</node>
+    <node x="0.0" y="5977.0">azkaban.executor.ActiveExecutingFlowsDao</node>
+    <node x="4525.0" y="4097.0">azkaban.executor.ExecutionFlowDao.FetchQueuedExecutableFlows</node>
+    <node x="3038.0" y="4674.0">azkaban.executor.ExecutionLogsDao</node>
+    <node x="3110.0" y="5206.0">azkaban.executor.ExecutorHealthCheckerTest</node>
+    <node x="381.0" y="5064.0">azkaban.executor.ExecutionJobDao.FetchExecutableJobAttachmentsHandler</node>
+    <node x="0.0" y="5657.0">azkaban.executor.RunningExecutionsUpdaterThread</node>
+    <node x="1756.0" y="4674.0">azkaban.executor.JavaJobRunnerMain</node>
+    <node x="4414.0" y="4674.0">azkaban.executor.RunningExecutionsUpdater</node>
+    <node x="1392.0" y="5977.0">azkaban.executor.ExecutableFlowPriorityComparator</node>
+    <node x="2668.5" y="4887.0">azkaban.executor.ExecutorLogEvent.EventType</node>
+    <node x="1807.9999999999998" y="4217.0">azkaban.executor.SelectorTest.MockFlowObject</node>
+    <node x="5415.0" y="5657.0">azkaban.executor.AlerterHolder</node>
+    <node x="5590.0" y="4674.0">azkaban.executor.ExecutorHealthChecker</node>
+    <node x="1401.0" y="5657.0">azkaban.executor.SleepJavaJob</node>
+    <node x="760.0" y="3608.0">azkaban.executor.ExecutorManagerTest</node>
+    <node x="3625.75" y="0.0">azkaban.executor.ExecutorLoader</node>
+    <node x="5561.0" y="0.0">azkaban.executor.ExecutionOptions</node>
+    <node x="1306.9999999999998" y="4173.0">azkaban.executor.SelectorTest.MockExecutorObject</node>
+    <node x="964.75" y="0.0">azkaban.executor.ExecutorManagerAdapter</node>
+    <node x="3745.0" y="5657.0">azkaban.executor.ExecutionControllerUtils</node>
+    <node x="6209.0" y="3954.0">azkaban.executor.ExecutorDao.FetchExecutorHandler</node>
+    <node x="0.0" y="5206.0">azkaban.executor.JavaJob</node>
+    <node x="5030.0" y="4097.0">azkaban.executor.ExecutionFlowDao.FetchRecentlyFinishedFlows</node>
+    <node x="2990.0" y="3608.0">azkaban.executor.ExecutionControllerTest</node>
+    <node x="2528.0" y="5206.0">azkaban.executor.QueuedExecutionsTest</node>
+    <node x="3657.0" y="5206.0">azkaban.executor.ExecutableFlowTest</node>
+    <node x="0.0" y="5042.0">azkaban.executor.ExecutionJobDao.FetchExecutableJobHandler</node>
+    <node x="4111.0" y="4042.0">azkaban.executor.ExecutionFlowDao.FetchExecutableFlows</node>
+    <node x="1372.0" y="1346.0">azkaban.executor.ExecutionController</node>
+    <node x="3124.0" y="1114.0">azkaban.executor.MockExecutorLoader</node>
+    <node x="3736.0" y="4674.0">azkaban.executor.QueuedExecutions</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="azkaban.executor.ExecutorEventsDao.ExecutorLogsResultHandler" target="azkaban.executor.ExecutorEventsDao">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="60.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionOptions.FailureAction" target="azkaban.executor.ExecutionOptions">
+      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="456.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutableFlow" target="azkaban.executor.ExecutableFlowBase">
+      <point x="0.0" y="-456.5" />
+      <point x="0.0" y="412.5" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionController" target="azkaban.executor.ExecutorManagerAdapter">
+      <point x="0.0" y="-632.5" />
+      <point x="1861.5" y="870.0" />
+      <point x="1420.75" y="870.0" />
+      <point x="152.0" y="422.5" />
+    </edge>
+    <edge source="azkaban.executor.FetchActiveFlowDao.FetchActiveExecutableFlows" target="azkaban.executor.FetchActiveFlowDao">
+      <point x="0.0" y="-48.5" />
+      <point x="1674.0" y="5483.0" />
+      <point x="1380.5" y="5483.0" />
+      <point x="220.0" y="126.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionJobDao.FetchExecutableJobAttachmentsHandler" target="azkaban.executor.ExecutionJobDao">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="159.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionFlowDao.FetchExecutableFlows" target="azkaban.executor.ExecutionFlowDao">
+      <point x="0.0" y="-92.5" />
+      <point x="4308.0" y="4017.0" />
+      <point x="4760.375" y="4017.0" />
+      <point x="-221.625" y="192.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionJobDao.FetchExecutableJobHandler" target="azkaban.executor.ExecutionJobDao">
+      <point x="0.0" y="-59.5" />
+      <point x="180.5" y="5017.0" />
+      <point x="428.16666666666663" y="5017.0" />
+      <point x="-148.33333333333337" y="159.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorManager.QueueProcessorThread" target="azkaban.executor.ExecutorManager">
+      <point x="0.0" y="-225.5" />
+      <point x="395.25" y="3087.0" />
+      <point x="338.0" y="3087.0" />
+      <point x="-338.0" y="1083.5" />
+    </edge>
+    <edge source="azkaban.executor.ExecutableFlowBase" target="azkaban.executor.ExecutableNode">
+      <point x="0.0" y="-412.5" />
+      <point x="0.0" y="676.5" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockExecutorObject" target="azkaban.executor.SelectorTest">
+      <point x="0.0" y="-137.0" />
+      <point x="1547.4999999999998" y="4153.0" />
+      <point x="1916.4999999999995" y="4153.0" />
+      <point x="-181.5" y="257.5" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockFlowObject" target="azkaban.executor.SelectorTest">
+      <point x="0.0" y="-93.0" />
+      <point x="1966.9999999999998" y="4153.0" />
+      <point x="2037.4999999999995" y="4153.0" />
+      <point x="-60.5" y="257.5" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorManager" target="azkaban.executor.ExecutorManagerAdapter">
+      <point x="0.0" y="-1083.5" />
+      <point x="676.0" y="870.0" />
+      <point x="1116.75" y="870.0" />
+      <point x="-152.0" y="422.5" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockComparator" target="azkaban.executor.SelectorTest">
+      <point x="-111.75" y="-82.0" />
+      <point x="2609.7499999999995" y="4143.0" />
+      <point x="2279.4999999999995" y="4143.0" />
+      <point x="181.5" y="257.5" />
+    </edge>
+    <edge source="azkaban.executor.NumExecutionsDao.IntHandler" target="azkaban.executor.NumExecutionsDao">
+      <point x="0.0" y="-59.5" />
+      <point x="0.0" y="82.0" />
+    </edge>
+    <edge source="azkaban.executor.FetchActiveFlowDao.FetchActiveExecutableFlow" target="azkaban.executor.FetchActiveFlowDao">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="126.0" />
+    </edge>
+    <edge source="azkaban.executor.MockExecutorLoader" target="azkaban.executor.ExecutorLoader">
+      <point x="0.0" y="-675.5" />
+      <point x="3440.0" y="1089.0" />
+      <point x="3783.75" y="1089.0" />
+      <point x="-158.0" y="532.0" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockComparator" target="azkaban.executor.selector">
+      <point x="111.75" y="-82.0" />
+      <point x="2833.25" y="4153.0" />
+      <point x="2673.4999999999995" y="4153.0" />
+      <point x="34.5" y="15.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionFlowDao.FetchRecentlyFinishedFlows" target="azkaban.executor.ExecutionFlowDao">
+      <point x="0.0" y="-37.5" />
+      <point x="5196.5" y="4017.0" />
+      <point x="5055.875" y="4017.0" />
+      <point x="73.875" y="192.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionFlowDao.FetchQueuedExecutableFlows" target="azkaban.executor.ExecutionFlowDao">
+      <point x="0.0" y="-37.5" />
+      <point x="4767.5" y="4017.0" />
+      <point x="4908.125" y="4017.0" />
+      <point x="-73.875" y="192.0" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockFilter" target="azkaban.executor.SelectorTest">
+      <point x="-83.0" y="-82.0" />
+      <point x="2228.9999999999995" y="4153.0" />
+      <point x="2158.4999999999995" y="4153.0" />
+      <point x="60.5" y="257.5" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionLogsDao.FetchLogsHandler" target="azkaban.executor.ExecutionLogsDao">
+      <point x="0.0" y="-71.0" />
+      <point x="0.0" y="115.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionJobDao.FetchExecutableJobPropsHandler" target="azkaban.executor.ExecutionJobDao">
+      <point x="0.0" y="-59.5" />
+      <point x="1013.5" y="5017.0" />
+      <point x="724.8333333333334" y="5017.0" />
+      <point x="148.33333333333337" y="159.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorLogEvent.EventType" target="azkaban.executor.ExecutorLogEvent">
+      <point x="0.0" y="-115.5" />
+      <point x="0.0" y="81.5" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorDao.FetchExecutorHandler" target="azkaban.executor.ExecutorDao">
+      <point x="0.0" y="-81.5" />
+      <point x="0.0" y="148.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorManager.CleanerThread" target="azkaban.executor.ExecutorManager">
+      <point x="0.0" y="-104.0" />
+      <point x="956.75" y="3087.0" />
+      <point x="1014.0" y="3087.0" />
+      <point x="338.0" y="1083.5" />
+    </edge>
+    <edge source="azkaban.executor.JdbcExecutorLoader" target="azkaban.executor.ExecutorLoader">
+      <point x="0.0" y="-643.0" />
+      <point x="4443.5" y="1089.0" />
+      <point x="4099.75" y="1089.0" />
+      <point x="158.0" y="532.0" />
+    </edge>
+    <edge source="azkaban.executor.SelectorTest.MockFilter" target="azkaban.executor.selector">
+      <point x="83.0" y="-82.0" />
+      <point x="2394.9999999999995" y="4153.0" />
+      <point x="2604.4999999999995" y="4153.0" />
+      <point x="-34.5" y="15.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutionFlowDao.SelectFromExecutionFlows" target="azkaban.executor.ExecutionFlowDao">
+      <point x="0.0" y="-59.5" />
+      <point x="5580.0" y="4017.0" />
+      <point x="5203.625" y="4017.0" />
+      <point x="221.625" y="192.0" />
+    </edge>
+    <edge source="azkaban.executor.ExecutorManagerException.Reason" target="azkaban.executor.ExecutorManagerException">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="104.0" />
+    </edge>
+    <edge source="azkaban.executor.FetchActiveFlowDao.FetchUnfinishedFlowsMetadata" target="azkaban.executor.FetchActiveFlowDao">
+      <point x="0.0" y="-37.5" />
+      <point x="647.0" y="5483.0" />
+      <point x="940.5" y="5483.0" />
+      <point x="-220.0" y="126.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.10832383124287344" x="3274.5" y="3059.5" />
+  <SelectedNodes>
+    <node>azkaban.executor.Executor</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

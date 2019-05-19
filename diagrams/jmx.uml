@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>azkaban.jmx</OriginalElement>
+  <nodes>
+    <node x="290.0" y="0.0">azkaban.jmx.JmxExecutorManagerMBean</node>
+    <node x="1115.0" y="0.0">azkaban.jmx.JmxExecutionControllerMBean</node>
+    <node x="0.0" y="0.0">azkaban.jmx.JmxJettyServerMBean</node>
+    <node x="735.5" y="0.0">azkaban.jmx.JmxTriggerManagerMBean</node>
+    <node x="306.0" y="1237.0">azkaban.jmx.DisplayName</node>
+    <node x="0.0" y="587.0">azkaban.jmx.JmxJettyServer</node>
+    <node x="690.0" y="256.0">azkaban.jmx.JmxTriggerManager</node>
+    <node x="290.0" y="366.0">azkaban.jmx.JmxExecutorManager</node>
+    <node x="1087.0" y="168.0">azkaban.jmx.JmxExecutionController</node>
+    <node x="504.0" y="1237.0">azkaban.jmx.ParameterName</node>
+    <node x="0.0" y="1237.0">azkaban.jmx.JmxTriggerRunnerManagerMBean</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="azkaban.jmx.JmxJettyServer" target="azkaban.jmx.JmxJettyServerMBean">
+      <point x="0.0" y="-302.5" />
+      <point x="0.0" y="268.5" />
+    </edge>
+    <edge source="azkaban.jmx.JmxExecutionController" target="azkaban.jmx.JmxExecutionControllerMBean">
+      <point x="0.0" y="-82.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="azkaban.jmx.JmxExecutorManager" target="azkaban.jmx.JmxExecutorManagerMBean">
+      <point x="0.0" y="-181.0" />
+      <point x="0.0" y="158.0" />
+    </edge>
+    <edge source="azkaban.jmx.JmxTriggerManager" target="azkaban.jmx.JmxTriggerManagerMBean">
+      <point x="0.0" y="-126.0" />
+      <point x="0.0" y="103.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4686398872445384" x="720.0" y="699.5" />
+  <SelectedNodes>
+    <node>azkaban.jmx.JmxExecutorManager</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
